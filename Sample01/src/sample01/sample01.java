@@ -22,6 +22,15 @@ public class sample01 {
 		boolean h = ( b == d ) ? true : false;
 		System.out.println(h);
 		
+		int i = 0;
+		boolean j = ( a == c ) || ( i == 0 );
+		boolean k = ( a == c ) && ( i == 0 );
+		System.out.println(j);
+		System.out.println(k);
+		
+		
+		int l = i+= 2;// i = i + 1 
+		System.out.println(l);
 		
 	}
 
