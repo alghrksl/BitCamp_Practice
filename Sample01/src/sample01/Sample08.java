@@ -31,12 +31,12 @@ public class Sample08 {
 //		}
 		
 		
-		for(int num = 1; num <= 10; num++) {
-			if ( num % 2 != 0) {
-				continue;
-			}
-			System.out.println(num);
-		}
+//		for(int num = 1; num <= 10; num++) {
+//			if ( num % 2 == 0) {
+//				continue;
+//			}
+//			System.out.println(num);
+//		}
 	}
 
 }
