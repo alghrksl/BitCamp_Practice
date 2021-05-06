@@ -33,7 +33,7 @@ public class SampleTest {
 
 			float evg = (CsScore + JpScore + MScore + OpScore + BdScore) / 5;
 
-			float[] num3 = new float[5];
+			float[] num3 = new float[6];
 			num3[0] = CsScore;
 			num3[1] = JpScore;
 			num3[2] = MScore;
