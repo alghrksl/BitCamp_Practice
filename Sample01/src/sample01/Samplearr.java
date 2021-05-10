@@ -17,12 +17,11 @@ public class Samplearr {
 		int count = 0;
 
 		for (int i = 0; i < student.length; i++) {
-			System.out.print(student[i][9]);
+			
 			for (int j = 0; j < student[i].length; j++) {
 				System.out.print(student[i][j]);
-				
-				
-				if (student[i][j] == answer[j]) {  /// 배열 비교
+
+				if (student[i][j] == answer[j]) { /// 배열 비교
 
 					count++; ///////////// 카운팅
 

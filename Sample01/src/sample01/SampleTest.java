@@ -14,9 +14,11 @@ public class SampleTest {
 
 	}
 
-	
-
 	public static void main(String[] args) {
+
+		float[] num3 = new float[5];
+		float evg = 0;
+		float sum = 0;
 
 		while (true) {
 
@@ -31,16 +33,18 @@ public class SampleTest {
 			System.out.printf("배드민턴 성적을 입력하세요 : ");
 			float BdScore = getUserInput();
 
-			float evg = (CsScore + JpScore + MScore + OpScore + BdScore) / 5;
-
-			float[] num3 = new float[6];
 			num3[0] = CsScore;
 			num3[1] = JpScore;
 			num3[2] = MScore;
 			num3[3] = OpScore;
 			num3[4] = BdScore;
 
-			for (int i = 0; i <= 5; i++) {
+			for (int i = 0; i <= num3.length - 1; i++) {
+				sum += num3[i];
+				evg = sum / 5;
+			}
+
+			for (int i = 0; i <= num3.length - 1; i++) {
 
 				if (num3[i] < 0 || num3[i] > 4.5) {
 					System.out.printf("%d번째 값이 잘못 입력되었습니다.", i);
@@ -55,14 +59,11 @@ public class SampleTest {
 
 				if (evg >= 3.7) {
 					System.out.println("장학금 대상자 입니다.");
-
-					for (int i = 0; i <= 4; i++) {
-
+					for (int i = 0; i <= num3.length - 1; i++) {
 						if (num3[i] < 2.5) {
 							System.out.println("과락으로 인한 장학금 수령이 불가능합니다.");
 
 						}
-
 					}
 
 				}
