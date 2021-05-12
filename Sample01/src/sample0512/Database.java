@@ -1,0 +1,7 @@
+package sample0512;
+
+public class Database {
+	void open() {
+		System.out.println("Database open");
+	}
+}
