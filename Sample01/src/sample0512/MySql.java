@@ -1,6 +1,6 @@
 package sample0512;
 
-public class Mysql extends Database {
+public class MySql extends Database {
 	void select_mysql() {
 		System.out.println("MySql select");
 	}

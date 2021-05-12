@@ -4,6 +4,9 @@ class Student {
 	String name;
 	int age;
 
+	public Student() {
+	
+	}
 	public Student(String name, int age) {
 		this.name = name;
 		this.age = age;
@@ -12,6 +15,10 @@ class Student {
 
 class MiddleStudent extends Student {
 	String gender;
+
+	public MiddleStudent() {
+		
+	}
 
 	public MiddleStudent(String name, int age, String gender) {
 		super(name, age);
@@ -25,7 +32,7 @@ public class Sample06 {
 
 	public static void main(String[] args) {
 
-		MiddleStudent Middle = new MiddleStudent("±èÃ¶¼ö", 50, "³²");
+		MiddleStudent Middle1 = new MiddleStudent();
 		MiddleStudent Middle2 = new MiddleStudent("±èÃ¶¼ö", 50, "³²");
 		MiddleStudent Middle3 = new MiddleStudent("±èÃ¶¼ö", 50, "³²");
 		MiddleStudent Middle4 = new MiddleStudent("±èÃ¶¼ö", 50, "³²");
@@ -35,11 +42,11 @@ public class Sample06 {
 //		MiddleCall(Middle4);
 	}
 
-	static void MiddleCall (MiddleStudent Middle) {
+	static void MiddleCall(MiddleStudent Middle) {
 //		System.out.print(Middle.name);
 //		System.out.print(Middle.age);
 //		System.out.print(Middle.gender);
-		
+
 	}
 
 }

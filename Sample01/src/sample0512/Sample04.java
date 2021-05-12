@@ -9,8 +9,9 @@ public class Sample04 {
 //		mysql.open();
 //		mysql.select_mysql();
 		openDb(new Oracle());
-		openDb(new Mysql());
+		openDb(new MySql());
 	}
+
 	static void openDb(Database db) {
 		db.open();
 	}
