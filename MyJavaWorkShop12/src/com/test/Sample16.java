@@ -34,8 +34,6 @@ class FruitBox<T extends Fruit & Eataable> extends Box<T> {
 
 }
 
-
-
 //class ToyBox<T extends Toy & Eataable> extends TBox<T> {
 //
 //}
@@ -59,8 +57,6 @@ class Box<T> {
 		list.add(item);
 	}
 
-
-
 	public String toString() {
 		return list.toString();
 	}
@@ -74,7 +70,7 @@ public class Sample16 {
 		FruitBox<Apple> applebox = new FruitBox<Apple>();
 		FruitBox<Grape> grapebox = new FruitBox<Grape>();
 //		FruitBox<Grape> grapebox = new FruitBox<Apple>(); // 왼쪽 오른쪽 타입 불일치
-		FruitBox<Toy> toybox = new 	FruitBox<Toy>(); // Toy Class 가 Fruit를 extend 하지 않기 때문
+		FruitBox<Toy> toybox = new FruitBox<Toy>(); // Toy Class 가 Fruit를 extend 하지 않기 때문
 
 		fruitbox.add(new Fruit());
 		fruitbox.add(new Apple());
