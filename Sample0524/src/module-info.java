@@ -1,0 +1,2 @@
+module Sample0524 {
+}
