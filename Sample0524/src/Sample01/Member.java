@@ -5,14 +5,17 @@ import java.util.Scanner;
 public class Member {
 
 	public static void main(String[] args) {
-		int firstnum, secondNum;
-		String str;
 
-		double height = 170;
-		int age = 20;
+		String str;
+		String yn;
 		String name = "Kimhoon";
 		String book = "Java의 정석";
-		String yn;
+
+		int firstnum, secondnum;
+		int age = 20;
+
+		double height = 170;
+
 		boolean hasbook = (book == "Java의 정석");
 
 		if (hasbook == true) {
@@ -24,11 +27,11 @@ public class Member {
 		}
 
 //		Scanner scanner = new Scanner(System.in);
-//
+//      
 //		System.out.print("첫째 값 입력  : ");
 //		firstnum = scanner.nextInt();
 //		System.out.print("둘째 값 입력  : ");
-//		secondNum = scanner.nextInt();
+//		secondnum = scanner.nextInt();
 //		System.out.print("수식 입력 : ");
 //		str = scanner.next();
 //
@@ -36,19 +39,19 @@ public class Member {
 //
 //		switch (str) {
 //		case "+": {
-//			Cal.add(firstnum, secondNum);
+//			Cal.add(firstnum, secondnum);
 //			break;
 //		}
 //		case "-": {
-//			Cal.sub(firstnum, secondNum);
+//			Cal.sub(firstnum, secondnum);
 //			break;
 //		}
 //		case "/": {
-//			Cal.divide(firstnum, secondNum);
+//			Cal.divide(firstnum, secondnum);
 //			break;
 //		}
 //		case "*": {
-//			Cal.mul(firstnum, secondNum);
+//			Cal.mul(firstnum, secondnum);
 //			break;
 //		}
 //		}
