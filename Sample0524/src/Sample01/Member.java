@@ -4,19 +4,8 @@ import java.util.Scanner;
 
 public class Member {
 
-	public static void main(String[] args) {
+	void virus(int age) {
 
-		int year;
-
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.print("태어난 연도 입력 > ");
-		year = scanner.nextInt();
-
-		int age = 2021 - year + 1;
-
-		System.out.println("------------------------------");
-		
 		if (age < 15) {
 			System.out.println("대상자 입니다.");
 		} else if (age >= 65) {
@@ -24,9 +13,9 @@ public class Member {
 		} else {
 			System.out.println("대상자가 아닙니다.");
 		}
+	}
 
-		System.out.println("------------------------------");
-		
+	void checkup(int age, int year) {
 		if (age >= 20) {
 
 			System.out.println("2년마다 건강검진을 받을 수 있습니다.");
@@ -45,6 +34,30 @@ public class Member {
 			System.out.println("대상자가 아닙니다.");
 		}
 
+	}
+
+	public static void main(String[] args) {
+
+		int year;
+
+		Member member = new Member();
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("태어난 연도 입력 > ");
+		year = scanner.nextInt();
+
+		int age = 2021 - year + 1;
+
+		System.out.println("----------- 독감 -------------");
+
+		member.virus(age);
+
+		System.out.println("----------- 검진 -------------");
+
+		member.checkup(age, year);
+
+		System.out.println("-----------------------------");
+		
 		
 		
 //      ----------------------------------------------------------
