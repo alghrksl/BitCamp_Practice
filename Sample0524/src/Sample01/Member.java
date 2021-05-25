@@ -6,9 +6,7 @@ public class Member {
 
 	void virus(int age) {
 
-		if (age < 15) {
-			System.out.println("대상자 입니다.");
-		} else if (age >= 65) {
+		if (age < 15 || age >= 65) {
 			System.out.println("대상자 입니다.");
 		} else {
 			System.out.println("대상자가 아닙니다.");
@@ -22,7 +20,7 @@ public class Member {
 
 			if (year % 2 == 0) {
 				System.out.println("짝수년 검사 대상자 입니다.");
-			} else if (year % 2 == 1) {
+			} else {
 				System.out.println("홀수년 검사 대상자 입니다.");
 			}
 
@@ -57,9 +55,7 @@ public class Member {
 		member.checkup(age, year);
 
 		System.out.println("-----------------------------");
-		
-		
-		
+
 //      ----------------------------------------------------------
 //		String str;
 //		String yn;

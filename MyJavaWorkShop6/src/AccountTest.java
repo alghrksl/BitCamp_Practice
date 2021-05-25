@@ -3,57 +3,64 @@ class Account {
 	private String accountName;
 	private double balance;
 	public static double interest;
-	public Account(String accountNo, 
-			String accountName,
-			int balance) {
+
+	public Account(String accountNo, String accountName, int balance) {
 		this.accountNo = accountNo;
 		this.accountName = accountName;
-		this.balance = balance;		
+		this.balance = balance;
 	}
+
 	public String getAccountNo() {
 		return this.accountNo;
 	}
+
 	public String getAccountName() {
 		return this.accountName;
 	}
+
 	public double getBalance() {
 		return this.balance;
 	}
+
 	public void deposit(int price) {
-		this.balance += price; 
+		this.balance += price;
 		// this.balance = this.balance + price;
 	}
+
 	public void withdraw(int price) {
 		this.balance -= price;
 		// this.balance = this.balance - price;
 	}
+
 	public void addInterest() {
 		balance = balance + (balance * interest);
 	}
 }
+
 public class AccountTest {
-	public static void main(String[] args){
-		Account customer1=new Account("111-222-33333333","ÃÖÀºÈñ",20000);
-		Account customer2=new Account("555-666-77777777","³²¸Å¿ù",100000);
-		System.out.println("±âº» Àû¸³±Ý");
+	public static void main(String[] args) {
+		Account customer1 = new Account("111-222-33333333", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 20000);
+		Account customer2 = new Account("555-666-77777777", "ï¿½ï¿½ï¿½Å¿ï¿½", 100000);
+		System.out.println("ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		printAccount(customer1);
 		printAccount(customer2);
-		System.out.println("ÇÑ¹øÀÇ ÀÔÃâ±Ý");
+		System.out.println("ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½");
 		customer1.deposit(1000000);
 		customer2.withdraw(30000);
 		printAccount(customer1);
 		printAccount(customer2);
-		System.out.println("ÀÌÀÚÀ²ÀÇ °è»ê"); 
-		Account.interest=0.05;
-		customer1.addInterest(); //ÀúÃàµÈ ±Ý¾×=¿ø±Ý+¿ø±Ý*ÀÌÀÚÀ²
-		customer2.addInterest();//ÀúÃàµÈ ±Ý¾×=¿ø±Ý+¿ø±Ý*ÀÌÀÚÀ²
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
+		Account.interest = 0.05;
+		customer1.addInterest(); // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½=ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		customer2.addInterest();// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½=ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		printAccount(customer1);
 		printAccount(customer2);
 	}
-	static void printAccount(Account customer){
-		System.out.println("°èÁÂ¹øÈ£:"+customer.getAccountNo());
-		System.out.println("¿¹±ÝÁÖÀÌ¸§:"+customer.getAccountName());
-		System.out.println("ÀÜ¾×:"+customer.getBalance());
+
+	static void printAccount(Account customer) {
+		System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£:" + customer.getAccountNo());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½:" + customer.getAccountName());
+		System.out.println("ï¿½Ü¾ï¿½:" + customer.getBalance());
 		System.out.println();
 	}
 }
