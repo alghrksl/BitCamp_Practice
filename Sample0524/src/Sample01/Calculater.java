@@ -3,21 +3,34 @@ package Sample01;
 import java.util.Scanner;
 
 class Calculater {
+	static double fi = 3.14;
 
 	static void circlearea(int firstnum) {
-		double a = 2 * 3.14 * firstnum;
+		double a = 2 * fi * firstnum;
 		System.out.println(a);
 	}
 
 	static void circumferencea(int firstnum) {
-		double a = 3.14 * firstnum * firstnum;
+		double a = fi * firstnum * firstnum;
 		System.out.println(a);
 	}
 
-	void add(int a, int b) { System.out.println(a + b); }
-	void sub(int a, int b) { System.out.println(a + b); }
-	void mul(int a, int b) { System.out.println(a + b); }
-	void divide(int a, int b) { System.out.println(a + b); }
+	void add(int a, int b) {
+		System.out.println(a + b);
+	}
+
+	void sub(int a, int b) {
+		System.out.println(a - b);
+	}
+
+	void mul(int a, int b) {
+		System.out.println(a * b);
+	}
+
+	void divide(int a, int b) {
+
+		System.out.println(a / b);
+	}
 
 	public static void main(String[] args) {
 		String str;
@@ -73,9 +86,9 @@ class Calculater {
 			Calculater.circumferencea(firstnum);
 			break;
 		}
-		
+
 		}
 
 	}
-	
+
 }
