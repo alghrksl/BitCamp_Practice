@@ -1,4 +1,4 @@
-package Sample01;
+package Arr;
 
 class Student {
 
