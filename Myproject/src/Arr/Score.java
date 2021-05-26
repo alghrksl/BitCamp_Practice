@@ -19,30 +19,18 @@ public class Score {
 		String language_score;
 		String english_score;
 
-		for (int j = 1; j < student[0].length; j++) {
-			student[0][0] = " 이름 : ";
-			student[1][0] = " 국어 : ";
-			student[2][0] = " 수학 : ";
-			student[3][0] = " 영어 : ";
+		for (int i = 1; i < student[0].length; i++) {
 
-			System.out.print("사람 이름 >");
-			sooup = scanner.nextLine();
-			student[0][j] = sooup;
+			System.out.println("이름을 입력하세요 >");
+			name = scanner.nextLine();
+			name = student[0][i];
 
-			for (int i = 1; i < student.length; i++) {
-
-				System.out.print("점수 >");
-				math_score = scanner.nextLine();
-				student[i][j] = math_score; // 여기까지함
-
-			}
+//			for (int i = 1; i < student.length; i++) {
+//
+//			}
 
 		}
-
-		for (int i = 0; i < 4; i++) {
-			System.out.println(Arrays.toString(student[i]));
-		}
-
+		System.out.println(student[0]);
 	}
 
 }
