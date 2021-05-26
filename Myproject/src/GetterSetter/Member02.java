@@ -16,7 +16,5 @@ public class Member02 {
 		MemberSub member2 = new MemberSub("이진형", "010-0000-0001", "영문", 3, "aaa@aaa.com", "1996-04-13", "구로");
 		member1.showdata();
 
-		member2.setName("영희");
-		member2.showdata();
 	}
 }
