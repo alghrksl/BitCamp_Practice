@@ -88,19 +88,20 @@ public class MemberSub {
 	void showdata() {
 		System.out.println("이름: " + name);
 		System.out.println("전화번호: " + phonNum);
-		System.out.println("전공: " + major + "학과");
-		System.out.println("학년: " + grade + "학년");
+		System.out.println("전공: " + major);
+		System.out.println("학년: " + grade);
 		System.out.println("이메일: " + email);
+		
 		if (this.birth == null) {
 			System.out.println("생일: ");
 		} else {
 			System.out.println("생일: " + birth);
 		}
 
-		if (this.address != null) {
-			System.out.println("주소: " + address);
-		} else {
+		if (this.address == null) {
 			System.out.println("주소: ");
+		} else {
+			System.out.println("주소: " + address);
 		}
 	}
 }
