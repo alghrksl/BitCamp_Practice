@@ -1,4 +1,4 @@
-package Arr;
+package Arr01;
 
 //1.Student 클래스를 정의해봅시다. 
 class Student {

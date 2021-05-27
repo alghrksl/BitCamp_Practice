@@ -20,7 +20,10 @@ public class Score {
 		for (int i = 0; i < stu.length; i++) {
 			stu[i].student();
 		}
+		for (int i = 0; i < stu.length; i++) {
+			System.out.println(stu[i].getName());
 
+		}
 	}
 
 }
