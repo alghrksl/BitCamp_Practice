@@ -63,7 +63,7 @@ public class PersonController {
 	}
 
 	void hello() {
-		
+
 		System.out.println("제 이름은 " + this.name + " 나이는 " + Calage());
 
 	}

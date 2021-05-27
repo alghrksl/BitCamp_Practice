@@ -1,4 +1,4 @@
-package Ex;
+package Extend02;
 
 public class Car {
 
