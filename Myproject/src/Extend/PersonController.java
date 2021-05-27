@@ -2,7 +2,7 @@ package Extend;
 
 import java.util.Calendar;
 
-public class PersonManager {
+public class PersonController {
 	private String name;
 	private String year;
 	private String hooby;
@@ -25,7 +25,7 @@ public class PersonManager {
 		this.year = year;
 	}
 
-	PersonManager(String name, String year) {
+	PersonController(String name, String year) {
 		this.name = name;
 		this.year = year;
 
@@ -63,7 +63,7 @@ public class PersonManager {
 	}
 
 	void hello() {
-
+		
 		System.out.println("제 이름은 " + this.name + " 나이는 " + Calage());
 
 	}

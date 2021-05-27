@@ -1,6 +1,6 @@
 package Extend;
 
-public class Male extends PersonManager {
+public class Male extends PersonController {
 
 	public Male(String name, String year, String hooby) {
 		super(name, year);

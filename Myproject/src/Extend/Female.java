@@ -1,6 +1,6 @@
 package Extend;
 
-public class Female extends PersonManager {
+public class Female extends PersonController {
 
 	private String hooby;
 
