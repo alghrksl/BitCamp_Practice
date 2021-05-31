@@ -1,4 +1,4 @@
-package Arr01;
+package Arr;
 
 //1.Student 클래스를 정의해봅시다. 
 class Student {
@@ -6,14 +6,13 @@ class Student {
 //  1.1 학생이름, 국어점수, 영어점수, 수학점수를 저장하는 변수를 정의 합니다.
 //	1.2 변수는 캡슐화를 합니다.
 	private String name;
-	private int math_score = 60;
-	private int language_score = 60;
-	private int english_score = 60;
+	private int math_score;
+	private int language_score;
+	private int english_score;
 	int score;
 	int average;
 
 //	1.2 getter/setter 메소드를 정의합니다.
-
 	public String getName() {
 		return name;
 	}
@@ -46,16 +45,24 @@ class Student {
 		this.english_score = english_score;
 	}
 
-	public Student(int math_score, int language_score, int english_score) {
+	public Student(String name, int math_score, int language_score, int english_score) {
+		this.name = name;
 		this.english_score = english_score;
 		this.math_score = math_score;
 		this.language_score = language_score;
 	}
 
-	public void Score() {
-		score = this.english_score + this.language_score + this.math_score;
+	// 1.3 총점과 평균을 구해 결과를 반환하는 메소드를 정의합니다.
+	void student() {
+		score = math_score + language_score + english_score;
 		average = score / 3;
-		System.out.println(average);
+		System.out.println("이름 > " + name);
+		System.out.println("총점 > " + score);
+		System.out.println("평균 > " + average);
+		System.out.println("국어 > " + language_score);
+		System.out.println("수학 > " + math_score);
+		System.out.println("영어 > " + english_score);
+		System.out.println("");
 	}
 
 }

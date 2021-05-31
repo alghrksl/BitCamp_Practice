@@ -1,4 +1,4 @@
-package Arr02;
+package Arr;
 
 public class Score {
 
