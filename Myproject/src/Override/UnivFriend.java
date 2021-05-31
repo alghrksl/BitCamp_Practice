@@ -1,4 +1,4 @@
-package Abstract01;
+package Override;
 
 public class UnivFriend extends Friend {
 	

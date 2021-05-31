@@ -1,4 +1,4 @@
-package Abstract02;
+package Abstract01;
 
 interface Calulator {
 	long add(long n1, long n2);
