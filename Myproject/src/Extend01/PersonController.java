@@ -5,9 +5,6 @@ import java.util.Calendar;
 public class PersonController {
 	private String name;
 	private String year;
-	private String hooby;
-
-	private int age;
 
 	public String getName() {
 		return name;
