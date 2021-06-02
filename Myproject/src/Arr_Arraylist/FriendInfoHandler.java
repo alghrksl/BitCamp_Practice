@@ -10,7 +10,7 @@ public class FriendInfoHandler {
 	// Friend[] friends;
 
 	ArrayList<Friend> friends = new ArrayList<Friend>();
-	int numOfFriend; // 배열의 입력 index 역할, 정보의 개수
+//	int numOfFriend; // 배열의 입력 index 역할, 정보의 개수
 
 	// 생성자
 	public FriendInfoHandler(int num) { // 배열의 사이즈 -> 배열 인스턴스 생성
