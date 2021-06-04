@@ -9,11 +9,12 @@ public class CheckInt extends Throwable {
 		Scanner scanner = new Scanner(System.in);
 
 		try {
+			
 			System.out.print("태어난 년도를 입력해주세요 : ");
 
 			int num = scanner.nextInt();
 
-			System.out.println(num);
+			System.out.println(num + "년생");
 
 		} catch (InputMismatchException e) {
 

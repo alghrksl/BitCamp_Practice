@@ -8,27 +8,36 @@ import java.io.IOException;
 public class StringReader {
 
 	public static void main(String[] args) {
-
+		
 		try {
 			BufferedReader in = new BufferedReader(new FileReader("String.txt"));
-			// 임시변수
+			
+			// 임시 변수 
 			String str = null;
-
-			while (true) {
+			
+			while(true) {
+			
 				str = in.readLine();
-
-				if (str == null)
+				
+				if(str == null) {
 					break;
-
+				}
+				
 				System.out.println(str);
-
+				
 			}
+			
+			
+			
 		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+
 	}
 
 }
