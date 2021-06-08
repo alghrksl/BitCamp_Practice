@@ -2,7 +2,7 @@ package Collection;
 
 import java.io.Serializable;
 
-public class FootballPlayerMain implements Comparable<FootballPlayerMain> {
+public class FootballPlayerMain implements Comparable<FootballPlayerMain>, Serializable {
 
 	String name;
 	int backNumber;
@@ -36,7 +36,7 @@ public class FootballPlayerMain implements Comparable<FootballPlayerMain> {
 		this.age = age;
 	}
 
-	void showInfo() {
+	public void showInfo() {
 		System.out.println("이름 > " + getName());
 		System.out.println("등번호 > " + getBackNumber());
 		System.out.println("팀 > " + getTeam());

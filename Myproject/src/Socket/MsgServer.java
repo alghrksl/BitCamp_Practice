@@ -27,7 +27,7 @@ public class MsgServer {
 			dout = new DataOutputStream(sk.getOutputStream());
 
 			Scanner sc = new Scanner(System.in);
-		
+
 			String str = null; // 받는 메시지
 			System.out.println("입력");
 			String str2 = ""; // 보내는 메시지
