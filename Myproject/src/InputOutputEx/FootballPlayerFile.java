@@ -29,20 +29,20 @@ public class FootballPlayerFile {
 					new FileOutputStream(newFile + File.separator + memoTitle));
 
 			List<FootballPlayerMain> players = new ArrayList<FootballPlayerMain>();
-			players.add(new FootballPlayerMain("손흥민", 7, "토트넘", 30));
-			players.add(new FootballPlayerMain("디발라", 10, "유벤투스", 29));
-			players.add(new FootballPlayerMain("케인", 10, "토트넘", 29));
-			players.add(new FootballPlayerMain("손흥민", 7, "토트넘", 30));
+			players.add(new FootballPlayerMain("아구에로", 10, "맨시티", 32));
+			players.add(new FootballPlayerMain("메시", 9, "바르셀로나", 32));
+			players.add(new FootballPlayerMain("해리케인", 10, "토트넘", 28));
+			players.add(new FootballPlayerMain("하베르츠", 9, "첼시", 26));
 			ObjOut.writeObject(players);
 			ObjOut.close();
 
-			System.out.println("인스턴스 저장 완료!");
+			System.out.println("저장 완료 !");
 
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream(newFile + File.separator + memoTitle));
 
 			ArrayList<FootballPlayerMain> rePlayers = (ArrayList<FootballPlayerMain>) in.readObject();
 			in.close();
-			System.out.println("인스턴스 복원 완료");
+			System.out.println("복원 시작 ! ");
 
 			Iterator<FootballPlayerMain> itr = rePlayers.iterator();
 			while (itr.hasNext()) {
@@ -57,7 +57,7 @@ public class FootballPlayerFile {
 			e.printStackTrace();
 		}
 
-		System.out.println("인스턴스 종료 ! ");
+		System.out.println("복원 종료 ! ");
 
 	}
 
