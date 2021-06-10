@@ -3,13 +3,13 @@
 -- (1) 도서번호가1인도서의이름
 
 SELECT
-    *
+    bookname
 FROM BOOK
 WHERE BOOKID = 1 ;
 
 -- (2) 가격이20,000원이상인도서의이름
 SELECT
-    *
+    bookname
 FROM BOOK
 WHERE PRICE > 20000;
 
