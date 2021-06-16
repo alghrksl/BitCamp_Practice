@@ -27,7 +27,9 @@ CREATE TABLE phoneInfo_com(
 idx NUMBER(6) CONSTRAINT phoneInfo_com_idx_pk PRIMARY KEY,
 fr_c_company VARCHAR2(20) DEFAULT 'N' 
                           NOT NULL,
-fr_ref NUMBER(6) CONSTRAINT phoneInfo_com_ref_fk REFERENCES phoneinfo_basic(idx) NOT NULL
+fr_ref NUMBER(6) CONSTRAINT phoneInfo_com_ref_fk REFERENCES phoneinfo_basic(idx) 
+                 NOT NULL
 );
 
 
+commit;
