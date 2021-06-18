@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class jdbcjestemp {
+public class JDBCTestEMP {
 
 	public static void main(String[] args) {
 		
@@ -28,65 +28,33 @@ public class jdbcjestemp {
 			// 2. 연결
 			String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "hr";
-			String pw = "admin";
+			String pw = "tiger";
 			
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("데이터베이스 연결 성공!!!");
 			
 			// 3. sql 처리
+			// 사원 번호, 사원이름, 지급, sal, 부서이름, 부서위치
+			
+			// 1. Statement
 			stmt = conn.createStatement();
 			
-			int dno = 10;
-			String otype = "deptno";
+			// 2. sql 작성
+			String sql = "select e.empno, e.ename, e.job, e.sal, d.dname, d.loc  from emp e, dept d where e.deptno=d.deptno";
 			
-			String sqlSelect = 
-					"select * from dept where deptno = "+dno+" order by " + otype;
-					
-			rs = stmt.executeQuery(sqlSelect);
+			// 3. Resultset 객체로 데이터 받기
+			rs = stmt.executeQuery(sql);
 			
-			// rs.next() -> 다음행의 존재 유무 확인
+			// 4. 출력
 			while(rs.next()) {
-				int deptno = rs.getInt("deptno");
-				System.out.print(deptno + "\t");
-				String dname = rs.getString("dname");
-				System.out.print(dname + "\t");
-				String loc = rs.getString("loc");
-				System.out.println(loc + "\t");
+				System.out.println(rs.getInt(1)+"\t"
+									+rs.getString(2)+"\t"
+									+rs.getString(3)+"\t"
+									+rs.getInt(4)+"\t"
+									+rs.getString(5)+"\t"
+									+rs.getString(6)
+									);
 			}
-			
-			/////////////////////////////////////////////
-			// PreparedStatement -> Sql 먼저 등록 -> 매개변수처럼 ?를 이용해서 나중에 변수를 바인딩
-			
-			System.out.println("PrepqredStatement 사용");
-			System.out.println("=========================================");
-			
-			String sqlSelect2 = "select * from dept where deptno = ? ";
-			pstmt = conn.prepareStatement(sqlSelect2);
-			// ? 변수에 데이터 바인딩
-			pstmt.setInt(1, 10);
-			
-			rs = pstmt.executeQuery();
-			
-//			while(rs.next()) {
-//				int deptno = rs.getInt("deptno");
-//				System.out.print(deptno + "\t");
-//				String dname = rs.getString("dname");
-//				System.out.print(dname + "\t");
-//				String loc = rs.getString("loc");
-//				System.out.println(loc + "\t");
-//			}
-			
-			while(rs.next()) {
-			
-				System.out.println(rs.getString(1) + "/t");
-				
-			}
-			
-			
-			
-			
-			
-			
 			
 			
 			
