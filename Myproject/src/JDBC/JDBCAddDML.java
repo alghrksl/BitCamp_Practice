@@ -6,10 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
-public class jdbctest01 {
-
-	public static void main(String[] args) {
+public class JDBCAddDML {
+public static void main(String[] args) {
 		
 		// 연결 객체 : 연결 정보를 가진다.
 		Connection conn = null;
@@ -19,6 +19,9 @@ public class jdbctest01 {
 		ResultSet rs = null;
 		//Statement -> PreparedStatement  : 성능개선
 		PreparedStatement pstmt = null;
+		
+		
+		Scanner s = new Scanner(System.in);
 		
 		try {
 			// 1. 드라이버 로드
@@ -32,6 +35,13 @@ public class jdbctest01 {
 			
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("데이터베이스 연결 성공!!!");
+			
+			System.out.println("부서 정보 입력을 시작합니다.");
+			System.out.println("부서 이름을 입력해주세요");
+			String DNAME = s.nextLine();
+			System.out.println("부서 위치");
+			String LOC = s.nextLine();
+			
 			
 			// 3. sql 처리
 			stmt = conn.createStatement();
@@ -66,21 +76,27 @@ public class jdbctest01 {
 			pstmt.setInt(1, 10);
 			
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				int deptno = rs.getInt("deptno");
-				System.out.print(deptno + "\t");
-				String dname = rs.getString("dname");
-				System.out.print(dname + "\t");
-				String loc = rs.getString("loc");
-				System.out.println(loc + "\t");
+		
+			// 3. 사용자에게 정보를 받아 데이터를 처리 해보자 (DB 데이터 입력)
+			
+			String sql = "INSERT INTO dept01 VALUES (DEPT_DEPTNO_SEQ.nextval, ? ,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, DNAME);
+			pstmt.setString(2, LOC);
+			
+			int result = pstmt.executeUpdate();
+			
+			if(result > 0) {
+				System.out.println("입력됨");
+			} else {
+				System.out.println("입력실패");
 			}
 			
 			
 			
 			
 			
-			
-			
+			conn.commit();
 			
 			
 			

@@ -6,8 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
-public class jdbcjestemp {
+public class JDBCDeleteDML {
 
 	public static void main(String[] args) {
 		
@@ -19,6 +20,8 @@ public class jdbcjestemp {
 		ResultSet rs = null;
 		//Statement -> PreparedStatement  : 성능개선
 		PreparedStatement pstmt = null;
+		
+		Scanner sc = new Scanner(System.in);
 		
 		try {
 			// 1. 드라이버 로드
@@ -33,53 +36,28 @@ public class jdbcjestemp {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("데이터베이스 연결 성공!!!");
 			
+			// 트렌젝션 설정
+			conn.setAutoCommit(false);
+			
+			
+			System.out.println("부서 정보의 삭제를 시작합니다.");
+			System.out.println("부서 번호를 입력해주세요.");
+			String deptno = sc.nextLine();
+			
+			
+			
 			// 3. sql 처리
-			stmt = conn.createStatement();
+			// 사용자에게 정보를 받아 부서 데이터를 입력하는 프로그램을 만들어보자
+			String sql = "delete from dept01 where deptno=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,Integer.parseInt(deptno));
 			
-			int dno = 10;
-			String otype = "deptno";
+			int result = pstmt.executeUpdate();
 			
-			String sqlSelect = 
-					"select * from dept where deptno = "+dno+" order by " + otype;
-					
-			rs = stmt.executeQuery(sqlSelect);
-			
-			// rs.next() -> 다음행의 존재 유무 확인
-			while(rs.next()) {
-				int deptno = rs.getInt("deptno");
-				System.out.print(deptno + "\t");
-				String dname = rs.getString("dname");
-				System.out.print(dname + "\t");
-				String loc = rs.getString("loc");
-				System.out.println(loc + "\t");
-			}
-			
-			/////////////////////////////////////////////
-			// PreparedStatement -> Sql 먼저 등록 -> 매개변수처럼 ?를 이용해서 나중에 변수를 바인딩
-			
-			System.out.println("PrepqredStatement 사용");
-			System.out.println("=========================================");
-			
-			String sqlSelect2 = "select * from dept where deptno = ? ";
-			pstmt = conn.prepareStatement(sqlSelect2);
-			// ? 변수에 데이터 바인딩
-			pstmt.setInt(1, 10);
-			
-			rs = pstmt.executeQuery();
-			
-//			while(rs.next()) {
-//				int deptno = rs.getInt("deptno");
-//				System.out.print(deptno + "\t");
-//				String dname = rs.getString("dname");
-//				System.out.print(dname + "\t");
-//				String loc = rs.getString("loc");
-//				System.out.println(loc + "\t");
-//			}
-			
-			while(rs.next()) {
-			
-				System.out.println(rs.getString(1) + "/t");
-				
+			if(result>0) {
+				System.out.println(result+"개 행이 삭제되었습니다.");
+			} else {
+				System.out.println("조건에 맞는 데이터가 존재하지 않습니다.");
 			}
 			
 			
@@ -89,15 +67,23 @@ public class jdbcjestemp {
 			
 			
 			
-			
+			// 트렌젝션 완료(성공)
+			conn.commit();
 			
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 클래스를 찾지못함!!!");
 			e.printStackTrace();
 		} catch (SQLException e) {
-			System.out.println("데이터베이스 연결 실패!!!");
+			//System.out.println("데이터베이스 연결 실패!!!");
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
+			
 		} finally {
 			
 			// 4. close
