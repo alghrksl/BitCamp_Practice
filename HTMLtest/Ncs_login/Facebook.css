@@ -1,0 +1,129 @@
+.mainSection{
+    background-color: #eff1f4;
+    display: grid;
+    grid-template-columns: 50% 100%;
+}
+
+.mainSection .leftSection{
+    width: 55%;
+    height: 30%;
+    margin: 20% auto 10% 50%;
+    display: grid;
+    grid-template-columns:100%;
+}
+
+.mainSection .rightSection{
+    width: 25%;
+    background-color: #ffffff; 
+    height: 55%;  margin: 7% 50% 10% 5%; 
+    display: grid;
+   grid-template-columns:100%;
+   box-shadow: 0px 3px 10px rgb(0 0 0 / 20%);
+   border-radius: 3%;
+   text-align: center;
+}
+
+.mainSection .rightSection .userSec {
+    grid-row: 1/2;
+}
+
+.mainSection .rightSection .userSection .inputSection {
+    height: 25%;  padding: 2%;
+}
+
+.mainSection .rightSection .userSection .inputSection .login{
+    background-color: aliceblue;
+    width: 85%;
+    height: 70%;
+    color: #dddfe2;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px;
+    padding: 3% !important;
+    font-size: 15px;
+}
+
+.mainSection .rightSection .userSection .logindiv{
+    width: 90%;
+    height: 50%;
+    border: khaki;
+    padding: 3% 5% 5% 5%;
+    
+}
+
+.mainSection .rightSection .userSection .logindiv .loginbutton{
+    background-color: #1877f2;
+    width:  100%;
+    height: 50%;
+    border-radius: 10px;
+    border: solid 1px;
+    color: #ffffff;
+    margin-bottom: 2%;
+    font-size: 15px;
+}
+
+.mainSection .rightSection .userSection .logindiv .loginFind{
+    color: #1877f2;
+    font-size: 14px;
+    text-decoration: none
+}
+
+.mainSection .rightSection .newlogin{
+    width: 90%;
+    height: 50%;
+    padding-top: 2%;
+    text-align: center;
+    margin: 7% auto 4% auto;
+    border-top: 1px solid #d3d3d3;
+}
+
+
+.mainSection .rightSection .newloginButton{
+    background-color: #42b72a;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+    border: solid 1px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.mainSection .leftSection .Logo{
+    color:#1877f2; font-size: 70px; font-weight: bolder;
+}
+
+
+.mainSection .leftSection .LogoText{
+    font-size: 25px;
+}
+
+
+.Text {
+    font-size: 25px;
+}
+
+.copy{
+    margin: 0% 2% 2% 2%;
+    color: #acac8e;
+}
+
+.footer{
+    width: 80%;
+    margin: 1% 10%;
+    list-style: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.category{
+    border-top: 1px solid #d3d3d3;
+     list-style: none;
+     padding-top: 1%;
+}
+
+.alink{
+    text-decoration: none;
+    color: #acac8e;
+}
