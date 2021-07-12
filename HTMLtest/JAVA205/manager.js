@@ -1,5 +1,8 @@
 
+$(document).ready(function() {
 
+
+)};
 // 회원의 정보 : 아이디, 비밀번호, 이름
 // Member -> 생성자 함수를 정의
 function Member(id, pw, name) {
@@ -33,7 +36,7 @@ window.onload = function () {
 
     //localStorage 저장된 데이터가 있는지 확인
     // localStorage.getItem('members') 없으면 null 반환
-    if(localStorage.getItem('members') == null) {
+    if (localStorage.getItem('members') == null) {
         // 배열 members 를 저장
         localStorage.setItem('members', JSON.stringify(members));
     } else {
@@ -44,8 +47,8 @@ window.onload = function () {
     }
 
 
-   // setList();
-    
+    // setList();
+
 
     var userid = document.querySelector('#userID');
     var pw = document.querySelector('#pw');
@@ -187,7 +190,7 @@ function setList() {
             tbody += '  <td>' + members[i].userid + '</td>';
             tbody += '  <td>' + members[i].pw + '</td>';
             tbody += '  <td>' + members[i].username + '</td>';
-            tbody += '  <td> <a href="javascript:editMember('+i+')">수정</a> | <a href="javascript:deleteMember('+i+')">삭제</a></td>';
+            tbody += '  <td> <a href="javascript:editMember(' + i + ')">수정</a> | <a href="javascript:deleteMember(' + i + ')">삭제</a></td>';
             tbody += '</tr>';
         }
     }
@@ -208,7 +211,7 @@ function deleteMember(index) {
     // 배열의 index 요소를 삭제
     // splice(index, count) : index에서 시작해서 count 만큼의 요소를 삭제하고 남은 요소의 배열을 반환
     // splice(index, 1)
-    if(confirm('삭제하시겠습니까?')){
+    if (confirm('삭제하시겠습니까?')) {
         members.splice(index, 1);
         alert('삭제되었습니다.');
 
@@ -218,7 +221,7 @@ function deleteMember(index) {
         // 테이블 리스트를 갱신
         setList();
     }
-    
+
 }
 
 // 배열의 요소 수정 함수
@@ -247,19 +250,19 @@ function editMember(index) {
     editName.value = members[index].userName;
     editIndex.value = index;
 
-    document.querySelector('#editForm').onsubmit= function(){
+    document.querySelector('#editForm').onsubmit = function () {
 
         //var member  = new Member(editUserId.value, editPw.value, editName.value);
         //console.log(editIndex.value , member);
 
         // 비밀번호와 비밀번호 확인이 같은지 체크
-        if(editPw.value != editRePw.value){
+        if (editPw.value != editRePw.value) {
             alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return false;
         }
 
-        if(!confirm('수정하시겠습니까?')){
-           return false; 
+        if (!confirm('수정하시겠습니까?')) {
+            return false;
         }
 
         members[editIndex.value].pw = editPw.value;
@@ -282,7 +285,7 @@ function editMember(index) {
 
 
 
-function editMemberClose(){
+function editMemberClose() {
     document.querySelector('#editFormArea').style.display = 'none';
 }
 
