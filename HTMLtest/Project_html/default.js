@@ -6,6 +6,7 @@ function Member(id, pw, name){
     this.pw=pw;
     this.userName=name;
 }
+
 // 객체가 가지는 메소드는 공통으로 사용 -> prototype
 Member.prototype.makeHtml = function (){
     return '[id:'+this.userId+' , pw: '+this.pw+' , name: '+this.userName+' ]'
@@ -18,11 +19,10 @@ Member.prototype.makeHtml = function (){
 
 window.onload = function () {
 
-    // regForm 캐스팅
     var regForm = document.getElementById('regForm');
     regForm.onsubmit = function(){
 
-        // 사용자가 입력한 값 
+        
         var userid = document.querySelector('#userID').value;
         var pw = document.querySelector('#pw').value;
         var repw = document.querySelector('#repw').value;
@@ -44,7 +44,7 @@ window.onload = function () {
         }
 
         // 비밀번호 비밀번호 확인 일치 여부 체크
-        if(pw.value.trim() != repw.value.trim()) {
+        if(pw.value.trim() != repw..trim()) {
             alert('비밀번호와 비밀번화 확인과 일치하지 않습니다.\n다시 확인해주세요.')
             return false;
         }

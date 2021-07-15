@@ -47,25 +47,23 @@ window.onload = function () {
     }
 
 
+<<<<<<< Updated upstream
     // setList();
 
 
+=======
+    
+>>>>>>> Stashed changes
     var userid = document.querySelector('#userID');
     var pw = document.querySelector('#pw');
     var repw = document.querySelector('#repw');
     var userName = document.querySelector('#userName');
 
     // regForm 캐스팅
+
     var regForm = document.getElementById('regForm');
 
     regForm.onsubmit = function () {
-
-        // 사용자가 입력한 값 
-        // var userid = document.querySelector('#userID').value;
-        // var pw = document.querySelector('#pw').value;
-        // var repw = document.querySelector('#repw').value;
-        // var userName = document.querySelector('#userName').value;
-
 
         if (userid.value.trim().length < 1) {
             //alert('이름을 입력해주세요');
@@ -73,7 +71,6 @@ window.onload = function () {
             document.querySelector('#userID+div.msg').style.display = 'block';
             return false;
         }
-
 
         if (pw.value.trim().length < 1) {
             //alert('비밀번호를 입력해주세요');
@@ -231,8 +228,6 @@ function editMember(index) {
     document.querySelector('#editFormArea').style.display = 'block';
 
 
-    //alert(index + ' 인덱스의 요소를 수정합니다.');
-
     // 전달받은 index 값으로 members 배열의 객체 하나를 얻을 수 있다!
     console.log(index, members[index]);
 
@@ -252,11 +247,16 @@ function editMember(index) {
 
     document.querySelector('#editForm').onsubmit = function () {
 
+<<<<<<< Updated upstream
         //var member  = new Member(editUserId.value, editPw.value, editName.value);
         //console.log(editIndex.value , member);
 
         // 비밀번호와 비밀번호 확인이 같은지 체크
         if (editPw.value != editRePw.value) {
+=======
+       
+        if(editPw.value != editRePw.value){
+>>>>>>> Stashed changes
             alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return false;
         }
@@ -268,12 +268,10 @@ function editMember(index) {
         members[editIndex.value].pw = editPw.value;
         members[editIndex.value].userName = editName.value;
 
-        // 저장
         localStorage.setItem('members', JSON.stringify(members));
 
         alert('수정되었습니다.');
 
-        // 테이블 세팅
         setList();
 
         editMemberClose();
@@ -283,9 +281,13 @@ function editMember(index) {
 
 }
 
+<<<<<<< Updated upstream
 
 
 function editMemberClose() {
+=======
+function editMemberClose(){
+>>>>>>> Stashed changes
     document.querySelector('#editFormArea').style.display = 'none';
 }
 
